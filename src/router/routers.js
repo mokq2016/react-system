@@ -1,11 +1,15 @@
 import React from "react";
 import asyncComponent from "../components/Boundle/Boundle";
 import {
-  Route
+  Route,Redirect
 } from "react-router-dom";
 const routes = [
   {
-    path: "/",
+    path:'/sign',
+    component:asyncComponent(() => import("../pages/login/login"))
+  },
+  {
+    path: "/main",
     component: asyncComponent(() => import("../App")),
     children:[
       {
@@ -34,13 +38,13 @@ const routes = [
       }
     ]
   }
+  
 ];
 
 const RouteConfigExample = () => (
   <div>
-    {routes.map((route, i) => (
-      <Route
-        key={i}
+    {routes.map((route, i) => 
+      (<Route  key={i}
         path={route.path}
         render={props => <route.component {...props} routes={route.children} />}
       />

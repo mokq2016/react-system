@@ -46,22 +46,14 @@ export default class LeftMenu extends Component {
             name: "分类管理"
           },
           {
-            path: "/main/icon",
-            name: "Icon"
-          },
-          {
-            path: "",
-            name: "button"
-          },
-          {
-            path: "",
-            name: "button"
+            path: "/main/users",
+            name: "用户管理"
           }
         ]
       }
     ];
     return (
-      <Menu
+      <Menu className='left-menu'
         mode="inline"
         defaultSelectedKeys={["echarts"]}
         style={{
@@ -73,7 +65,7 @@ export default class LeftMenu extends Component {
         {menuArr.map((item, index) => {
           if (item.menuItemArr) {
             return (
-              <SubMenu
+              <SubMenu 
                 key={item.name}
                 title={
                   <span>
