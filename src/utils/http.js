@@ -26,7 +26,7 @@ Axios.interceptors.request.use(function (config) {
 // Add a response interceptor
 Axios.interceptors.response.use(function (response) {
   // Do something with response data
-  return response;
+  return response.data;
 }, function (error) {
   if (error.response) {
     switch (error.response.status) {

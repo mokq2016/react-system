@@ -11,7 +11,11 @@ class Login extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         http.post(`${API.login}`,values).then((res)=>{
-          console.log(res)
+          if(res.success){
+            this.props.history.push('/main/echarts')
+          }else{
+            
+          }
         })
       }
     });
