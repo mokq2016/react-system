@@ -33,6 +33,10 @@ const routes = [
         component: asyncComponent(() => import('../pages/category/category'))
       },
       {
+        path: "/main/users",
+        component: asyncComponent(() => import('../pages/users/userList'))
+      },
+      {
         path: "/main/echarts",
         component: asyncComponent(() => import('../pages/echarts/Echarts'))
       }
